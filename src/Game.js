@@ -35,7 +35,7 @@ export default function Game() {
       usersLocation.lat,
       usersLocation.lng
     );
-    setScore((curr) => Math.floor(curr + Math.max(0, 1000 - distance * 2)));
+    setScore((curr) => Math.floor(curr + Math.max(0, 100 - distance * 2)));
   };
 
   //*actions
@@ -62,8 +62,8 @@ export default function Game() {
     setCurrentLocation({
       name: rolledLocation.MGLSDE_LOC,
       location: {
-        lat: rolledLocation.X,
-        lng: rolledLocation.Y,
+        lat: rolledLocation.Y,
+        lng: rolledLocation.X,
       },
     });
   };
@@ -139,10 +139,14 @@ export default function Game() {
         aria-describedby='simple-modal-description'>
         {body}
       </Modal>
-      <div className='game-pannel' style={{ height: "20vh" }}>
+      <div
+        className='game-pannel'
+        style={{ height: "20vh", textAlign: "center" }}>
         {/* <h1>MapGames</h1> */}
-        {currentLocation && <h1>{currentLocation.name}</h1>}
-        <h3>ניקוד : {score}</h3>
+        {currentLocation && (
+          <h1 style={{ fontSize: "50px" }}>{currentLocation.name}</h1>
+        )}
+        <h2>ניקוד : {score}</h2>
       </div>
       <Map
         userPick={userPick}
