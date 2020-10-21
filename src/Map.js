@@ -35,7 +35,7 @@ const MapContainer = ({
       <GoogleMap
         onClick={userClicked}
         mapContainerStyle={{
-          height: "80vh",
+          height: "85vh",
           width: "100%",
         }}
         zoom={8}
